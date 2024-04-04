@@ -1,0 +1,25 @@
+{# templates/base.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mon Application{% endblock %}</title>
+    <!-- Inclure les fichiers CSS -->
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+    <header>
+        <!-- Barre de navigation -->
+        <nav>
+            <ul>
+                <li><a href="{{ path('accueil') }}">Accueil</a></li>
+                <li><a href="{{ path('produits') }}">Produits</a></li>
+                <!-- Ajoutez d'autres liens de navigation selon votre besoin -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="con
