@@ -1,0 +1,59 @@
+/* public/css/produits.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.produit {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.produit img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produit-info {
+    padding: 10px;
+}
+
+.produit-nom {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.produit-description {
+    margin-bottom: 10px;
+}
+
+.produit-prix {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

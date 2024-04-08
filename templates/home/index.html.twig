@@ -5,9 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Accueil</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}"> {# Inclure le fichier CSS #}
 </head>
 <body>
     <h1>Bienvenue sur la page d'accueil !</h1>
     <p>C'est ici que vous pouvez commencer à construire votre site.</p>
+
+    {# Ajouter un lien vers la page Produits #}
+    <a href="{{ path('produits') }}">Voir les produits</a>
 </body>
 </html>

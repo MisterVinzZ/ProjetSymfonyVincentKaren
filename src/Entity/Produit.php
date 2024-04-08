@@ -13,7 +13,6 @@ class Produit
     #[ORM\Column]
     private ?int $id = null;
 
-
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
@@ -23,11 +22,13 @@ class Produit
     #[ORM\Column]
     private ?float $prix = null;
 
- 
-    #[ORM\Column]
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null; // Champ pour stocker le nom du fichier image
+
+    #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeImmutable $created_at = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeImmutable $updated_at = null;
 
     public function getId(): ?int
@@ -71,8 +72,17 @@ class Produit
         return $this;
     }
 
-   
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
 
+    public function setImage(?string $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
 
     public function getCreatedAt(): ?\DateTimeImmutable
     {
@@ -96,5 +106,10 @@ class Produit
         $this->updated_at = $updated_at;
 
         return $this;
+    }
+    public function __construct()
+    {
+        $this->created_at = new \DateTimeImmutable();
+        $this->updated_at = new \DateTimeImmutable();
     }
 }

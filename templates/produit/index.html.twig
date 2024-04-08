@@ -1,14 +1,25 @@
 {# templates/produit/index.html.twig #}
 
 
+    <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
+
 {% block title %}Liste des Produits{% endblock %}
 
 {% block body %}
     <h1>Liste des Produits</h1>
 
-    <ul>
+    <div class="container">
         {% for produit in produits %}
-            <li>{{ produit.nom }} - {{ produit.prix }}€</li>
+            <div class="produit">
+                <img src="{{ asset('images/' ~ produit.image) }}" alt="{{ produit.nom }}">
+                <div class="produit-info">
+                    <div class="produit-nom">{{ produit.nom }}</div>
+                    <div class="produit-description">{{ produit.description }}</div>
+                    <div class="produit-prix">{{ produit.prix }}€</div>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
+
+    <a href="{{ path('accueil') }}">Accueil</a>
 {% endblock %}

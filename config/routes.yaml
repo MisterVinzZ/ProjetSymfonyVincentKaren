@@ -11,3 +11,11 @@ accueil:
 produits:
     path: /produits
     controller: App\Controller\ProduitController::index
+    
+produits_index:
+    path: /produits
+    controller: App\Controller\ProduitController::index
+
+produit_new:
+    path: /produits/new
+    controller: App\Controller\ProduitController::new

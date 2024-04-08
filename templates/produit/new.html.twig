@@ -1,0 +1,17 @@
+{# templates/produit/new.html.twig #}
+
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+{% block title %}Nouveau Produit{% endblock %}
+
+{% block body %}
+    <h1>Nouveau Produit</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.nom) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.prix) }}
+        {{ form_row(form.image) }}
+        <button type="submit" class="btn btn-primary">Créer</button>
+    {{ form_end(form) }}
+{% endblock %}
