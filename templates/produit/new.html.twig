@@ -1,17 +1,40 @@
 {# templates/produit/new.html.twig #}
 
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+<link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
 
-{% block title %}Nouveau Produit{% endblock %}
 
 {% block body %}
-    <h1>Nouveau Produit</h1>
+    <div class="form-container">
+        <h1 class="form-heading">Nouveau Produit</h1>
 
-    {{ form_start(form) }}
-        {{ form_row(form.nom) }}
-        {{ form_row(form.description) }}
-        {{ form_row(form.prix) }}
-        {{ form_row(form.image) }}
-        <button type="submit" class="btn btn-primary">Créer</button>
-    {{ form_end(form) }}
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.nom) }}
+            {{ form_widget(form.nom) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.prix) }}
+            {{ form_widget(form.prix) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.image) }}
+            {{ form_widget(form.image) }}
+        </div>
+
+        <button type="submit" class="btn-primary">Créer</button>
+        {{ form_end(form) }}
+
+        {% if form_errors(form) %}
+            <div class="error-message">
+                {{ form_errors(form) }}
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

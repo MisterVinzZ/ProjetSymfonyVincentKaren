@@ -29,6 +29,9 @@ class ProduitController extends AbstractController
     /**
      * @Route("/produits/new", name="produit_new", methods={"GET","POST"})
      */
+    /**
+     * @Route("/produits/new", name="produit_new", methods={"GET","POST"})
+     */
     public function new(Request $request): Response
     {
         $produit = new Produit();
@@ -36,16 +39,34 @@ class ProduitController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Définir la date de création
-            $produit->setCreatedAt(new \DateTimeImmutable());
+            // Gestion du téléchargement de fichier
+            $imageFile = $form->get('image')->getData();
 
-            // Gestion du téléchargement de fichier si nécessaire
-            // Exemple : récupérer et enregistrer l'image associée au produit
+            if ($imageFile) {
+                // Générer un nom de fichier unique
+                $newFilename = uniqid().'.'.$imageFile->guessExtension();
 
+                // Déplacer le fichier dans le répertoire d'images
+                try {
+                    $imageFile->move(
+                        $this->getParameter('images_directory'),
+                        $newFilename
+                    );
+                } catch (\Exception $e) {
+                    // Gérer les erreurs de déplacement du fichier
+                    $this->addFlash('error', 'Une erreur s\'est produite lors du téléchargement de l\'image.');
+                    return $this->redirectToRoute('produit_new');
+                }
+
+                // Mettre à jour le champ image de l'entité Produit
+                $produit->setImage($newFilename);
+            }
+
+            // Enregistrer l'entité Produit dans la base de données
             $this->entityManager->persist($produit);
             $this->entityManager->flush();
 
-            // Redirection vers la liste des produits après création réussie
+            // Rediriger vers la liste des produits après création réussie
             return $this->redirectToRoute('produits_index');
         }
 
