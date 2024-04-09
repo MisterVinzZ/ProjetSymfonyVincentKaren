@@ -1,0 +1,23 @@
+{# templates/produit/edit.html.twig #}
+<link rel="stylesheet" href="{{ asset('css/edit.css') }}">
+
+{% block body %}
+    <div class="form-container">
+        <h1>Modifier Produit</h1>
+
+        {{ form_start(form) }}
+            {{ form_row(form.nom) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.prix) }}
+            {{ form_row(form.image) }}
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        {{ form_end(form) }}
+
+        {# templates/produit/edit.html.twig #}
+<form action="{{ path('produit_delete', { 'id': produit.id }) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ produit.id) }}"> {# Jeton CSRF #}
+    <button type="submit" class="btn btn-danger mt-3">Supprimer</button>
+</form>
+
+    </div>
+{% endblock %}

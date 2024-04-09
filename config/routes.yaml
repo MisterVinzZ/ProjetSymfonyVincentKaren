@@ -19,3 +19,13 @@ produits_index:
 produit_new:
     path: /produits/new
     controller: App\Controller\ProduitController::new
+
+produit_edit:
+    path: /produits/edit/{id}
+    controller: 'App\Controller\ProduitController::edit'
+    methods: ['GET', 'POST']
+
+produit_delete:
+    path: /produits/delete/{id}
+    controller: 'App\Controller\ProduitController::delete'
+    methods: ['POST']

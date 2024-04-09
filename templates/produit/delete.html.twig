@@ -1,0 +1,11 @@
+{# templates/produit/delete.html.twig #}
+
+<h1>Supprimer le Produit</h1>
+
+<p>Êtes-vous sûr de vouloir supprimer ce produit ?</p>
+
+<form action="{{ path('produit_delete', { 'id': produit.id }) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?');">
+    <input type="hidden" name="_method" value="DELETE">
+    {{ csrf_token('delete' ~ produit.id) }}
+    <button type="submit" class="btn btn-danger">Confirmer la suppression</button>
+</form>

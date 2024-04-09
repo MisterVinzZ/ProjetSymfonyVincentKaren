@@ -75,4 +75,56 @@ class ProduitController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    /**
+ * @Route("/produits/edit/{id}", name="produit_edit", methods={"GET", "POST"})
+ */
+public function edit(Request $request, Produit $produit): Response
+{
+    $form = $this->createForm(ProduitType::class, $produit);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        // Gestion des modifications apportées au produit
+
+        $this->entityManager->flush();
+
+        $this->addFlash('success', 'Produit modifié avec succès.');
+
+        return $this->redirectToRoute('produits_index');
+    }
+
+    return $this->render('produit/edit.html.twig', [
+        'form' => $form->createView(),
+        'produit' => $produit,
+    ]);
+}
+/**
+ * @Route("/produits/delete/{id}", name="produit_delete", methods={"DELETE"})
+ */
+
+ public function delete(Request $request, Produit $produit): Response
+    {
+        $entityManager = $this->entityManager;
+
+        if ($this->isCsrfTokenValid('delete' . $produit->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($produit);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Produit supprimé avec succès.');
+        } else {
+            $this->addFlash('error', 'Token CSRF invalide.');
+        }
+
+        return $this->redirectToRoute('produits_index');
+    }
+
+
+    
+public function show(Produit $produit): Response
+{
+    return $this->render('produit/delete.html.twig', [
+        'produit' => $produit,
+    ]);
+}
+
 }

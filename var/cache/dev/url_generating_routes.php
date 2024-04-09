@@ -8,4 +8,6 @@ return [
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/produits']], [], [], []],
     'produits_index' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/produits']], [], [], []],
     'produit_new' => [[], ['_controller' => 'App\\Controller\\ProduitController::new'], [], [['text', '/produits/new']], [], [], []],
+    'produit_edit' => [['id'], ['_controller' => 'App\\Controller\\ProduitController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produits/edit']], [], [], []],
+    'produit_delete' => [['id'], ['_controller' => 'App\\Controller\\ProduitController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produits/delete']], [], [], []],
 ];
