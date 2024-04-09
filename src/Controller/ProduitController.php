@@ -119,12 +119,10 @@ public function edit(Request $request, Produit $produit): Response
     }
 
 
-    
-public function show(Produit $produit): Response
-{
-    return $this->render('produit/delete.html.twig', [
-        'produit' => $produit,
-    ]);
-}
-
+    public function show(Produit $produit): Response
+    {
+        return $this->render('produit/show.html.twig', [
+            'produit' => $produit,
+        ]);
+    }
 }

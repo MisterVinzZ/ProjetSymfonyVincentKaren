@@ -4,10 +4,11 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
-    'accueil' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
+    'accueil' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/']], [], [], []],
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/produits']], [], [], []],
     'produits_index' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/produits']], [], [], []],
     'produit_new' => [[], ['_controller' => 'App\\Controller\\ProduitController::new'], [], [['text', '/produits/new']], [], [], []],
     'produit_edit' => [['id'], ['_controller' => 'App\\Controller\\ProduitController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produits/edit']], [], [], []],
     'produit_delete' => [['id'], ['_controller' => 'App\\Controller\\ProduitController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produits/delete']], [], [], []],
+    'produit_show' => [['id'], ['_controller' => 'App\\Controller\\ProduitController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produits/show']], [], [], []],
 ];

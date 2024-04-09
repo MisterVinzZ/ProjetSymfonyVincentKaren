@@ -50,14 +50,12 @@ class __TwigTemplate_0e726e6bb9110a67b3a61bde3c7b6473 extends Template
         // line 9
         echo "</head>
 <body>
-    <h1>Bienvenue sur la page d'accueil !</h1>
-    <p>C'est ici que vous pouvez commencer à construire votre site.</p>
-
     ";
-        // line 15
-        echo "    <a href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
-        echo "\">Voir les produits</a>
+        // line 11
+        $this->loadTemplate("includes/navbar.html.twig", "home/index.html.twig", 11)->display($context);
+        // line 12
+        echo "
+
 </body>
 </html>
 ";
@@ -87,7 +85,7 @@ class __TwigTemplate_0e726e6bb9110a67b3a61bde3c7b6473 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  58 => 15,  51 => 9,  48 => 8,  40 => 2,);
+        return array (  57 => 12,  55 => 11,  51 => 9,  48 => 8,  40 => 2,);
     }
 
     public function getSourceContext()
@@ -102,11 +100,9 @@ class __TwigTemplate_0e726e6bb9110a67b3a61bde3c7b6473 extends Template
     <link rel=\"stylesheet\" href=\"{{ asset('css/styles.css') }}\"> {# Inclure le fichier CSS #}
 </head>
 <body>
-    <h1>Bienvenue sur la page d'accueil !</h1>
-    <p>C'est ici que vous pouvez commencer à construire votre site.</p>
+    {% include 'includes/navbar.html.twig' %}
 
-    {# Ajouter un lien vers la page Produits #}
-    <a href=\"{{ path('produits') }}\">Voir les produits</a>
+
 </body>
 </html>
 ", "home/index.html.twig", "C:\\xampp\\htdocs\\ProjetEcommerce\\templates\\home\\index.html.twig");

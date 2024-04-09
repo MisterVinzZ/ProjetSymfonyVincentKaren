@@ -1,6 +1,8 @@
 /* Styling for the form container */
 body {
     font-family: 'Roboto', sans-serif; /* Utilisez la police Roboto pour tout le texte */
+    padding: 0;
+    margin: 0;
 }
 .form-container {
     max-width: 600px;

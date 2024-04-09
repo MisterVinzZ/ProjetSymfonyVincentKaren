@@ -1,6 +1,8 @@
 /* public/css/formulaire.css */
 body {
     font-family: 'Roboto', sans-serif; /* Utilisez la police Roboto pour tout le texte */
+    padding: 0;
+    margin: 0;
 }
 /* Style du conteneur du formulaire */
 .form-container {

@@ -1,28 +1,16 @@
-{# templates/produit/index.html.twig #}
-
-    {% include 'includes/navbar.html.twig' %}
-
-
+{% include 'includes/navbar.html.twig' %}
 
 {% block body %}
     <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
 
-    <h1>Liste des Figurines</h1>
-
     <div class="container">
-        {% for produit in produits %}
-        <div class="produit">
-            <a href="{{ path('produit_show', {'id': produit.id}) }}">
-                <img src="{{ asset('images/' ~ produit.image) }}" alt="{{ produit.nom }}">
-            
+        <div class="produit-detail">
+            <img src="{{ asset('images/' ~ produit.image) }}" alt="{{ produit.nom }}">
             <div class="produit-info">
                 <div class="produit-nom">{{ produit.nom }}</div>
                 <div class="produit-description">{{ produit.description }}</div>
                 <div class="produit-prix">{{ produit.prix }}€</div>
             </div>
-            </a>
         </div>
-    {% endfor %}
     </div>
-
 {% endblock %}

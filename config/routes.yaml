@@ -6,7 +6,7 @@ controllers:
     
 accueil:
     path: /
-    controller: App\Controller\HomeController::index
+    controller: App\Controller\ProduitController::index
         
 produits:
     path: /produits
@@ -29,3 +29,7 @@ produit_delete:
     path: /produits/delete/{id}
     controller: 'App\Controller\ProduitController::delete'
     methods: ['POST']
+
+produit_show:
+    path: /produits/show/{id}
+    controller: 'App\Controller\ProduitController::show'

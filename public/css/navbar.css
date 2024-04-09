@@ -1,0 +1,40 @@
+/* public/css/navbar.css */
+
+.navbar {
+    background-color: #e7e7e7; /* Rouge vif comme le symbole de Dragon Ball */
+    color: #000000; /* Texte en blanc pour contraster */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajoute une ombre portée */
+
+}
+
+.navbar-brand {
+    font-size: 24px; /* Taille de police plus grande pour le titre */
+    font-weight: bold; /* Texte en gras */
+    color: #000000; /* Texte en blanc */
+}
+
+.navbar-nav {
+    display: flex;
+}
+.navbar-nav .nav-item {
+    margin-right: 10px; /* Espacement entre les éléments de la navbar */
+    list-style: none;
+    padding: 10px;
+    font-size: 24px; /* Taille de police plus grande pour le titre */
+}
+
+.navbar-nav .nav-link {
+    color: #6d6969; /* Texte en blanc */
+    transition: color 0.3s ease; /* Animation de transition pour la couleur du texte */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #a8a8a8; /* Couleur jaune vif au survol */
+    text-decoration: none;
+}
+.navbar-brand:hover{
+    color: #a8a8a8; /* Couleur jaune vif au survol */
+    text-decoration: none;  
+}
