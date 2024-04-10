@@ -1,14 +1,20 @@
 {# templates/produit/new.html.twig #}
-
-<link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
-    {% include 'includes/navbar.html.twig' %}
-
-
+    <link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+    
+    
 {% block body %}
     <div class="form-container">
         <h1 class="form-heading">Nouveau Produit</h1>
 
         {{ form_start(form) }}
+
+        {# Ajouter le champ de catégorie #}
+        <div class="form-group">
+            {{ form_label(form.categorie) }}
+            {{ form_widget(form.categorie) }}
+        </div>
+
+        {# Autres champs du formulaire #}
         <div class="form-group">
             {{ form_label(form.nom) }}
             {{ form_widget(form.nom) }}

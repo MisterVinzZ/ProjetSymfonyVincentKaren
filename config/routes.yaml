@@ -33,3 +33,7 @@ produit_delete:
 produit_show:
     path: /produits/show/{id}
     controller: 'App\Controller\ProduitController::show'
+
+produits_par_categorie:
+    path: '/produits/{categorie}'
+    controller: 'App\Controller\ProduitController::produitsParCategorie'

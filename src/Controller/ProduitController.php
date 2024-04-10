@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ProduitRepository;
+
 
 class ProduitController extends AbstractController
 {
@@ -24,6 +26,15 @@ class ProduitController extends AbstractController
 
         return $this->render('produit/index.html.twig', [
             'produits' => $produits,
+        ]);
+    }
+    public function produitsParCategorie(string $categorie, ProduitRepository $produitRepository): Response
+    {
+        $produits = $produitRepository->findByCategorie($categorie);
+
+        return $this->render('produit/afficher_par_categorie.html.twig', [
+            'produits' => $produits,
+            'categorie' => $categorie,
         ]);
     }
     /**
@@ -123,6 +134,15 @@ public function edit(Request $request, Produit $produit): Response
     {
         return $this->render('produit/show.html.twig', [
             'produit' => $produit,
+        ]);
+    }
+    public function afficherParCategorie($categorie, ProduitRepository $produitRepository): Response
+    {
+        $produits = $produitRepository->findByCategorie($categorie);
+
+        return $this->render('produit/afficher_par_categorie.html.twig', [
+            'produits' => $produits,
+            'categorie' => $categorie,
         ]);
     }
 }

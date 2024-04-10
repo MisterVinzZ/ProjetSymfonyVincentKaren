@@ -1,0 +1,23 @@
+<!-- templates/produit/afficher_par_categorie.html.twig -->
+
+{% include 'includes/navbar.html.twig' %}
+    <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
+
+{% block body %}
+    <h1>Liste des Produits de la catégorie {{ categorie }}</h1>
+
+    <div class="container">
+        {% for produit in produits %}
+            <div class="produit">
+                <a href="{{ path('produit_show', {'id': produit.id}) }}">
+                    <img src="{{ asset('images/' ~ produit.image) }}" alt="{{ produit.nom }}">
+                    <div class="produit-info">
+                        <div class="produit-nom">{{ produit.nom }}</div>
+                        <div class="produit-description">{{ produit.description }}</div>
+                        <div class="produit-prix">{{ produit.prix }}€</div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

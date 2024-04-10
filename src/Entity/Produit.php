@@ -31,6 +31,21 @@ class Produit
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeImmutable $updated_at = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $categorie = null;
+
+    // Getter and setter for $categorie
+
+    public function getCategorie(): ?string
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(string $categorie): self
+    {
+        $this->categorie = $categorie;
+        return $this;
+    }
     public function getId(): ?int
     {
         return $this->id;

@@ -51,25 +51,34 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
     <!-- Inclure les fichiers CSS -->
     <link rel=\"stylesheet\" href=\"";
         // line 9
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/navbar.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 10
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/styles.css"), "html", null, true);
         echo "\">
     ";
-        // line 10
-        $this->displayBlock('stylesheets', $context, $blocks);
         // line 11
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 12
         echo "</head>
 <body>
 
     <header>
+        ";
+        // line 16
+        $this->loadTemplate("includes/navbar.html.twig", "base.html.twig", 16)->display($context);
+        // line 17
+        echo "
         <!-- Barre de navigation -->
         <nav>
             <ul>
                 <li><a href=\"";
-        // line 18
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
         echo "\">Accueil</a></li>
                 <li><a href=\"";
-        // line 19
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
         echo "\">Produits</a></li>
                 <!-- Ajoutez d'autres liens de navigation selon votre besoin -->
@@ -96,7 +105,7 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
 
     }
 
-    // line 10
+    // line 11
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -129,7 +138,7 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  100 => 10,  87 => 7,  73 => 19,  69 => 18,  60 => 11,  58 => 10,  54 => 9,  49 => 7,  42 => 2,);
+        return array (  109 => 11,  96 => 7,  82 => 22,  78 => 21,  72 => 17,  70 => 16,  64 => 12,  62 => 11,  58 => 10,  54 => 9,  49 => 7,  42 => 2,);
     }
 
     public function getSourceContext()
@@ -142,12 +151,15 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
     <meta charset=\"UTF-8\">
     <title>{% block title %}Mon Application{% endblock %}</title>
     <!-- Inclure les fichiers CSS -->
+    <link rel=\"stylesheet\" href=\"{{ asset('css/navbar.css') }}\">
     <link rel=\"stylesheet\" href=\"{{ asset('css/styles.css') }}\">
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
 
     <header>
+        {% include 'includes/navbar.html.twig' %}
+
         <!-- Barre de navigation -->
         <nav>
             <ul>
