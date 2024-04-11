@@ -1,27 +1,54 @@
-
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <!-- Remplacer "Mon Application" par un logo -->
+        <!-- Logo -->
         <a class="navbar-brand" href="{{ path('accueil') }}">
             <img src="{{ asset('images/logo.png') }}" alt="Logo" height="80">
         </a>
+
+        <!-- Barre de navigation -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                
                 <li class="nav-item">
                     <a href="{{ path('produits_par_categorie', {'categorie': 'figurine'}) }}">Figurines</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ path('produits_par_categorie', {'categorie': 'vetement'}) }}">Vetement</a>
+                    <a href="{{ path('produits_par_categorie', {'categorie': 'vetement'}) }}">Vêtements</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ path('produits_par_categorie', {'categorie': 'decoration'}) }}">Décoration</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ path('produits_par_categorie', {'categorie': 'accessoire'}) }}">Accessoire</a>
+                    <a href="{{ path('produits_par_categorie', {'categorie': 'accessoire'}) }}">Accessoires</a>
                 </li>
-                <!-- Ajoutez d'autres liens de navigation ici -->
+                <li class="nav-item">
+                    {% if search_form is defined %}
+                        {{ form_start(search_form, {'attr': {'class': 'form-inline', 'action': path('produits_search'), 'method': 'GET'}}) }}
+                            <div class="input-group">
+                                {{ form_widget(search_form.productName, {'attr': {'class': 'form-control', 'placeholder': 'Rechercher par nom', 'aria-label': 'Rechercher'}}) }}
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="fas fa-search"></i> <!-- Icône de loupe -->
+                                    </button>
+                                </div>
+                            </div>
+                        {{ form_end(search_form) }}
+                    {% else %}
+                        <!-- Si le formulaire de recherche n'est pas défini -->
+                        <form class="form-inline" action="{{ path('produits_search') }}" method="GET">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="productName" placeholder="Rechercher par nom de produit" aria-label="Rechercher">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="fas fa-search"></i> <!-- Icône de loupe -->
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    {% endif %}
+                </li>
             </ul>
         </div>
     </div>

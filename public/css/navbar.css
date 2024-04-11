@@ -1,40 +1,81 @@
 /* public/css/navbar.css */
 
+/* Style pour la barre de navigation */
 .navbar {
-    background-color: #e7e7e7; /* Rouge vif comme le symbole de Dragon Ball */
-    color: #000000; /* Texte en blanc pour contraster */
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajoute une ombre portée */
-
+    background-color: #e7e7e7; /* Couleur de fond de la barre de navigation */
+    color: #000000; /* Couleur du texte */
+    font-family: Arial, sans-serif; /* Police de caractères */
+    padding: 20px; /* Espacement interne */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
+/* Style pour le logo dans la barre de navigation */
 .navbar-brand {
-    font-size: 24px; /* Taille de police plus grande pour le titre */
+    font-size: 24px; /* Taille de police du logo */
     font-weight: bold; /* Texte en gras */
-    color: #000000; /* Texte en blanc */
+    color: #000000; /* Couleur du texte du logo */
 }
 
+/* Style pour les éléments de la barre de navigation */
 .navbar-nav {
-    display: flex;
-}
-.navbar-nav .nav-item {
-    margin-right: 10px; /* Espacement entre les éléments de la navbar */
-    list-style: none;
-    padding: 10px;
-    font-size: 24px; /* Taille de police plus grande pour le titre */
+    display: flex; /* Affichage en ligne des éléments de la liste */
+    align-items: center;
+
 }
 
-.navbar-nav .nav-link {
-    color: #6d6969; /* Texte en blanc */
+.navbar-nav .nav-item {
+    margin-right: 10px; /* Espacement entre les éléments */
+    list-style: none; /* Supprimer les puces de liste */
+    padding: 10px; /* Espacement interne des éléments */
+    font-size: 24px; /* Taille de police des éléments */
+    color: #6d6969; /* Couleur du texte des éléments */
     transition: color 0.3s ease; /* Animation de transition pour la couleur du texte */
 }
 
-.navbar-nav .nav-link:hover {
-    color: #a8a8a8; /* Couleur jaune vif au survol */
-    text-decoration: none;
+/* Style au survol des liens dans la barre de navigation */
+.navbar-nav .nav-item a:hover {
+    color: #a8a8a8; /* Couleur du texte au survol */
+    text-decoration: none; /* Supprimer la soulignement au survol */
 }
-.navbar-brand:hover{
-    color: #a8a8a8; /* Couleur jaune vif au survol */
-    text-decoration: none;  
+
+/* Style pour le formulaire de recherche */
+.navbar-nav .nav-item form {
+    display: flex; /* Affichage en ligne des éléments du formulaire */
+    align-items: center; /* Alignement vertical au centre */
+}
+
+.navbar-nav .nav-item .form-control {
+    width: 250px; /* Largeur du champ de recherche */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.navbar-nav .nav-item .btn {
+    margin-left: 10px; /* Espacement entre le champ de recherche et le bouton */
+}
+
+.input-group{
+    display: flex;
+}
+
+.form-inline{
+    margin: 0;
+}
+
+.btn-outline-secondary{
+    border: none;
+    height: 100%;
+    width: 50px;
+    border-radius: 5px;
+}
+.btn-outline-secondary:hover{
+    color: #ffffff; 
+    background-color: #a8a8a8;
+    cursor: pointer;
+    
+}
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active {
+    background-color: #a8a8a8;
 }

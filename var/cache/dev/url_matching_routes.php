@@ -14,6 +14,7 @@ return [
             [['_route' => 'produits_index', '_controller' => 'App\\Controller\\ProduitController::index'], null, null, null, false, false, null],
         ],
         '/produits/new' => [[['_route' => 'produit_new', '_controller' => 'App\\Controller\\ProduitController::new'], null, null, null, false, false, null]],
+        '/produits/search' => [[['_route' => 'produits_search', '_controller' => 'App\\Controller\\SearchController::search'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -22,7 +23,7 @@ return [
                     .'|edit/([^/]++)(*:68)'
                     .'|delete/([^/]++)(*:90)'
                     .'|show/([^/]++)(*:110)'
-                    .'|([^/]++)(*:126)'
+                    .'|categorie/([^/]++)(*:136)'
                 .')'
             .')/?$}sDu',
     ],
@@ -31,7 +32,7 @@ return [
         68 => [[['_route' => 'produit_edit', '_controller' => 'App\\Controller\\ProduitController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         90 => [[['_route' => 'produit_delete', '_controller' => 'App\\Controller\\ProduitController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         110 => [[['_route' => 'produit_show', '_controller' => 'App\\Controller\\ProduitController::show'], ['id'], null, null, false, true, null]],
-        126 => [
+        136 => [
             [['_route' => 'produits_par_categorie', '_controller' => 'App\\Controller\\ProduitController::produitsParCategorie'], ['categorie'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

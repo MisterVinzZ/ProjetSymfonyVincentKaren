@@ -35,5 +35,11 @@ produit_show:
     controller: 'App\Controller\ProduitController::show'
 
 produits_par_categorie:
-    path: '/produits/{categorie}'
+    path: '/produits/categorie/{categorie}'
     controller: 'App\Controller\ProduitController::produitsParCategorie'
+
+produits_search:
+    path: /produits/search
+    controller: 'App\Controller\SearchController::search'
+    methods: ['GET']
+

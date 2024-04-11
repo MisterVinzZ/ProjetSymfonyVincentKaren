@@ -6,20 +6,26 @@ use App\Entity\Produit;
 use App\Form\ProduitType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\SearchProductFormType;
 use App\Repository\ProduitRepository;
-
+use Symfony\Component\Form\FormError;
+use Symfony\Component\Form\FormInterface;
 
 class ProduitController extends AbstractController
 {
     private EntityManagerInterface $entityManager;
+    private ProduitRepository $produitRepository;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(EntityManagerInterface $entityManager, ProduitRepository $produitRepository, FormFactoryInterface $formFactory)
     {
         $this->entityManager = $entityManager;
+        $this->produitRepository = $produitRepository;
     }
+
     public function index(): Response
     {
         $produits = $this->entityManager->getRepository(Produit::class)->findAll();
@@ -28,6 +34,7 @@ class ProduitController extends AbstractController
             'produits' => $produits,
         ]);
     }
+
     public function produitsParCategorie(string $categorie, ProduitRepository $produitRepository): Response
     {
         $produits = $produitRepository->findByCategorie($categorie);
@@ -37,9 +44,7 @@ class ProduitController extends AbstractController
             'categorie' => $categorie,
         ]);
     }
-    /**
-     * @Route("/produits/new", name="produit_new", methods={"GET","POST"})
-     */
+
     /**
      * @Route("/produits/new", name="produit_new", methods={"GET","POST"})
      */
@@ -50,70 +55,59 @@ class ProduitController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Gestion du téléchargement de fichier
             $imageFile = $form->get('image')->getData();
 
             if ($imageFile) {
-                // Générer un nom de fichier unique
                 $newFilename = uniqid().'.'.$imageFile->guessExtension();
 
-                // Déplacer le fichier dans le répertoire d'images
                 try {
                     $imageFile->move(
                         $this->getParameter('images_directory'),
                         $newFilename
                     );
                 } catch (\Exception $e) {
-                    // Gérer les erreurs de déplacement du fichier
                     $this->addFlash('error', 'Une erreur s\'est produite lors du téléchargement de l\'image.');
                     return $this->redirectToRoute('produit_new');
                 }
 
-                // Mettre à jour le champ image de l'entité Produit
                 $produit->setImage($newFilename);
             }
 
-            // Enregistrer l'entité Produit dans la base de données
             $this->entityManager->persist($produit);
             $this->entityManager->flush();
 
-            // Rediriger vers la liste des produits après création réussie
             return $this->redirectToRoute('produits_index');
         }
 
-        // Afficher le formulaire de création de produit
         return $this->render('produit/new.html.twig', [
             'form' => $form->createView(),
         ]);
     }
+
     /**
- * @Route("/produits/edit/{id}", name="produit_edit", methods={"GET", "POST"})
- */
-public function edit(Request $request, Produit $produit): Response
-{
-    $form = $this->createForm(ProduitType::class, $produit);
-    $form->handleRequest($request);
+     * @Route("/produits/edit/{id}", name="produit_edit", methods={"GET", "POST"})
+     */
+    public function edit(Request $request, Produit $produit): Response
+    {
+        $form = $this->createForm(ProduitType::class, $produit);
+        $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()) {
-        // Gestion des modifications apportées au produit
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->entityManager->flush();
+            $this->addFlash('success', 'Produit modifié avec succès.');
+            return $this->redirectToRoute('produits_index');
+        }
 
-        $this->entityManager->flush();
-
-        $this->addFlash('success', 'Produit modifié avec succès.');
-
-        return $this->redirectToRoute('produits_index');
+        return $this->render('produit/edit.html.twig', [
+            'form' => $form->createView(),
+            'produit' => $produit,
+        ]);
     }
 
-    return $this->render('produit/edit.html.twig', [
-        'form' => $form->createView(),
-        'produit' => $produit,
-    ]);
-}
-/**
- * @Route("/produits/delete/{id}", name="produit_delete", methods={"DELETE"})
- */
-
- public function delete(Request $request, Produit $produit): Response
+    /**
+     * @Route("/produits/delete/{id}", name="produit_delete", methods={"DELETE"})
+     */
+    public function delete(Request $request, Produit $produit): Response
     {
         $entityManager = $this->entityManager;
 
@@ -129,13 +123,13 @@ public function edit(Request $request, Produit $produit): Response
         return $this->redirectToRoute('produits_index');
     }
 
-
     public function show(Produit $produit): Response
     {
         return $this->render('produit/show.html.twig', [
             'produit' => $produit,
         ]);
     }
+
     public function afficherParCategorie($categorie, ProduitRepository $produitRepository): Response
     {
         $produits = $produitRepository->findByCategorie($categorie);
@@ -145,4 +139,7 @@ public function edit(Request $request, Produit $produit): Response
             'categorie' => $categorie,
         ]);
     }
+
+   
+    
 }

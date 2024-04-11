@@ -29,6 +29,7 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
+            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -65,20 +66,16 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
 <body>
 
     <header>
-        ";
-        // line 16
-        $this->loadTemplate("includes/navbar.html.twig", "base.html.twig", 16)->display($context);
-        // line 17
-        echo "
+
         <!-- Barre de navigation -->
         <nav>
             <ul>
                 <li><a href=\"";
-        // line 21
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
         echo "\">Accueil</a></li>
                 <li><a href=\"";
-        // line 22
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
         echo "\">Produits</a></li>
                 <!-- Ajoutez d'autres liens de navigation selon votre besoin -->
@@ -86,7 +83,17 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
         </nav>
     </header>
 
-";
+<body>
+    <div class=\"container\">
+        ";
+        // line 29
+        $this->loadTemplate("navbar.html.twig", "base.html.twig", 29)->display($context);
+        // line 30
+        echo "        ";
+        $this->displayBlock('body', $context, $blocks);
+        // line 31
+        echo "    </div>
+</body>";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -117,6 +124,18 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
 
     }
 
+    // line 30
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
     /**
      * @codeCoverageIgnore
      */
@@ -138,7 +157,7 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  109 => 11,  96 => 7,  82 => 22,  78 => 21,  72 => 17,  70 => 16,  64 => 12,  62 => 11,  58 => 10,  54 => 9,  49 => 7,  42 => 2,);
+        return array (  128 => 30,  116 => 11,  103 => 7,  95 => 31,  92 => 30,  90 => 29,  79 => 21,  75 => 20,  65 => 12,  63 => 11,  59 => 10,  55 => 9,  50 => 7,  43 => 2,);
     }
 
     public function getSourceContext()
@@ -158,7 +177,6 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
 <body>
 
     <header>
-        {% include 'includes/navbar.html.twig' %}
 
         <!-- Barre de navigation -->
         <nav>
@@ -170,6 +188,11 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
         </nav>
     </header>
 
-", "base.html.twig", "C:\\xampp\\htdocs\\ProjetEcommerce\\templates\\base.html.twig");
+<body>
+    <div class=\"container\">
+        {% include 'navbar.html.twig' %}
+        {% block body %}{% endblock %}
+    </div>
+</body>", "base.html.twig", "C:\\xampp\\htdocs\\ProjetEcommerce\\templates\\base.html.twig");
     }
 }
