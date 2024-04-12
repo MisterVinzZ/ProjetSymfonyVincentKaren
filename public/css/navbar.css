@@ -5,7 +5,6 @@
     background-color: #e7e7e7; /* Couleur de fond de la barre de navigation */
     color: #000000; /* Couleur du texte */
     font-family: Arial, sans-serif; /* Police de caractères */
-    padding: 20px; /* Espacement interne */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 

@@ -64,40 +64,44 @@ class __TwigTemplate_7482410b0875c0e525331d194bb94157 extends Template
         echo "    <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/produits.css"), "html", null, true);
         echo "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/styles.css"), "html", null, true);
+        echo "\">
 
     <h1>Liste des Figurines</h1>
 
     <div class=\"container\">
         ";
-        // line 13
+        // line 14
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 13, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 14, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
-            // line 14
+            // line 15
             echo "        <div class=\"produit\">
             <a href=\"";
-            // line 15
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_show", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 15)]), "html", null, true);
+            // line 16
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_show", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 16)]), "html", null, true);
             echo "\">
                 <img src=\"";
-            // line 16
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 16))), "html", null, true);
+            // line 17
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 17))), "html", null, true);
             echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 16), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 17), "html", null, true);
             echo "\">
             
             <div class=\"produit-info\">
                 <div class=\"produit-nom\">";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 19), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 20), "html", null, true);
             echo "</div>
                 <div class=\"produit-description\">";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 20), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 21), "html", null, true);
             echo "</div>
                 <div class=\"produit-prix\">";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 21), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 22), "html", null, true);
             echo "€</div>
             </div>
             </a>
@@ -107,7 +111,7 @@ class __TwigTemplate_7482410b0875c0e525331d194bb94157 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 27
         echo "    </div>
 
 ";
@@ -137,7 +141,7 @@ class __TwigTemplate_7482410b0875c0e525331d194bb94157 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  111 => 26,  100 => 21,  96 => 20,  92 => 19,  84 => 16,  80 => 15,  77 => 14,  73 => 13,  64 => 8,  51 => 7,  46 => 4,  44 => 3,  41 => 2,);
+        return array (  115 => 27,  104 => 22,  100 => 21,  96 => 20,  88 => 17,  84 => 16,  81 => 15,  77 => 14,  69 => 9,  64 => 8,  51 => 7,  46 => 4,  44 => 3,  41 => 2,);
     }
 
     public function getSourceContext()
@@ -150,6 +154,7 @@ class __TwigTemplate_7482410b0875c0e525331d194bb94157 extends Template
 
 {% block body %}
     <link rel=\"stylesheet\" href=\"{{ asset('css/produits.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('css/styles.css') }}\">
 
     <h1>Liste des Figurines</h1>
 
