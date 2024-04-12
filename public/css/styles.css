@@ -1,32 +1,32 @@
-/* Styles généraux */
+/* Styles pour la barre latérale (sidebar) */
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+.sidebar {
+    float: left;
+    width: 20%;
+    height: 100vh;
+    background-color: #f0f0f0;
     padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Permet de faire défiler la barre latérale si nécessaire */
 }
 
-h1, h2 {
-    text-align: center;
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-/* Styles pour les produits */
+/* Styles pour la liste de produits */
+
+.produits-list {
+    float: left;
+    width: 80%;
+    padding-left: 20px; /* Ajoute un espace à gauche pour compenser la largeur de la barre latérale */
+    box-sizing: border-box;
+}
 
 .produit {
-    display: inline-block;
-    width: 30%;
-    margin: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: center;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .produit img {
@@ -50,40 +50,4 @@ h1, h2 {
 .produit-prix {
     font-size: 16px;
     color: #ff4500; /* Couleur orange pour le prix */
-}
-
-.produit-prix-promo {
-    font-size: 16px;
-    color: #ff4500; /* Couleur orange pour le prix */
-}
-
-.old-price {
-    color: #888888; /* Couleur grise pour l'ancien prix */
-}
-
-/* Styles pour les sections */
-
-.section {
-    margin-top: 30px;
-}
-
-/* Styles pour les promotions */
-
-.promotion {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.produit-promo {
-    width: 45%;
-    background-color: #ffffe0; /* Fond jaune clair pour les promotions */
-    padding: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.produit-promo img {
-    max-width: 100%;
-    height: auto;
 }
