@@ -67,4 +67,12 @@ class ProduitRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+    public function findRandomProduct(): ?Produit
+    {
+        $query = $this->createQueryBuilder('p')
+            ->setMaxResults(1) // Récupérer un seul résultat
+            ->getQuery();
+
+        return $query->getOneOrNullResult();
+    }   
 }

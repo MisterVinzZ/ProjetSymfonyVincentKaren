@@ -1,0 +1,45 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+{% endblock %}
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>À propos</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet consectetur velit.</p>
+                <div class="contact">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Rue Principale, Ville, Pays</p>
+                    <p><i class="fas fa-envelope"></i> contact@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1234567890</p>
+                </div>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h3>Contactez-nous</h3>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Nom" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Votre message" required></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 Mon Site - Tous droits réservés
+    </div>
+</footer>

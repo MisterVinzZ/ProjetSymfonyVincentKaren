@@ -1,54 +1,32 @@
-
-{% block body %}
-    <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Site{% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    <header>
+        {% block header %}
+            {% include 'includes/navbar.html.twig' %}
+        {% endblock %}
+    </header>
 
-    <h1>Liste des Figurines</h1>
+    <main>
+        {% block content %}
+                    {% include 'produit/produit_list.html.twig' %}
+        {% endblock %}
+    </main>
 
-    <div class="container">
-        <div class="sidebar">
-            <h2>Catégories</h2>
-            <select id="categorieSelect" onchange="filterProducts()">
-                <option value="tous">Tous les produits</option>
-                <option value="figurines">Figurines</option>
-                <option value="accessoires">Accessoires</option>
-                <option value="deco">Décorations</option>
-                <option value="vetement">vetement</option>
+    <footer>
+        {% block footer %}
+            {% include 'produit/footer.html.twig' %}       
+        {% endblock %}
+    </footer>
 
-                <!-- Ajoutez d'autres options pour les différentes catégories -->
-            </select>
-        </div>
-
-        <div class="produits-list" id="produitsList">
-            {% for produit in produits %}
-                <div class="produit {{ produit.categorie }}">
-                    <a href="{{ path('produit_show', {'id': produit.id}) }}">
-                        <img src="{{ asset('images/' ~ produit.image) }}" alt="{{ produit.nom }}">
-                        <div class="produit-info">
-                            <div class="produit-nom">{{ produit.nom }}</div>
-                            <div class="produit-description">{{ produit.description }}</div>
-                            <div class="produit-prix">{{ produit.prix }}€</div>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-
-    <script>
-        function filterProducts() {
-            var selectedCategory = document.getElementById('categorieSelect').value;
-            var produits = document.querySelectorAll('.produit');
-            var produitsList = document.getElementById('produitsList');
-            
-            produits.forEach(function(produit) {
-                if (selectedCategory === 'tous' || produit.classList.contains(selectedCategory)) {
-                    produit.style.display = 'block';
-                } else {
-                    produit.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
-{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% block javascripts %}{% endblock %}
+</body>
+</html>

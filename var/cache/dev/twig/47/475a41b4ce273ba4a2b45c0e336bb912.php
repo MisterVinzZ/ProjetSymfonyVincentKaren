@@ -27,7 +27,12 @@ class __TwigTemplate_7482410b0875c0e525331d194bb94157 extends Template
         $this->parent = false;
 
         $this->blocks = [
-            'body' => [$this, 'block_body'],
+            'title' => [$this, 'block_title'],
+            'stylesheets' => [$this, 'block_stylesheets'],
+            'header' => [$this, 'block_header'],
+            'content' => [$this, 'block_content'],
+            'footer' => [$this, 'block_footer'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -38,108 +43,142 @@ class __TwigTemplate_7482410b0875c0e525331d194bb94157 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "produit/index.html.twig"));
 
         // line 1
-        echo "
+        echo "<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>";
+        // line 6
+        $this->displayBlock('title', $context, $blocks);
+        echo "</title>
+    <link rel=\"stylesheet\" href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/styles.css"), "html", null, true);
+        echo "\">
+    ";
+        // line 8
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 9
+        echo "</head>
+<body>
+    <header>
+        ";
+        // line 12
+        $this->displayBlock('header', $context, $blocks);
+        // line 15
+        echo "    </header>
+
+    <main>
+        ";
+        // line 18
+        $this->displayBlock('content', $context, $blocks);
+        // line 21
+        echo "    </main>
+
+    <footer>
+        ";
+        // line 24
+        $this->displayBlock('footer', $context, $blocks);
+        // line 27
+        echo "    </footer>
+
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    ";
+        // line 30
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 31
+        echo "</body>
+</html>
 ";
-        // line 2
-        $this->displayBlock('body', $context, $blocks);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
-    public function block_body($context, array $blocks = [])
+    // line 6
+    public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        // line 3
-        echo "    <link rel=\"stylesheet\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/produits.css"), "html", null, true);
-        echo "\">
-    <link rel=\"stylesheet\" href=\"";
-        // line 4
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/styles.css"), "html", null, true);
-        echo "\">
+        echo "Mon Site";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
-    <h1>Liste des Figurines</h1>
+    }
 
-    <div class=\"container\">
-        <div class=\"sidebar\">
-            <h2>Catégories</h2>
-            <select id=\"categorieSelect\" onchange=\"filterProducts()\">
-                <option value=\"tous\">Tous les produits</option>
-                <option value=\"figurines\">Figurines</option>
-                <option value=\"accessoires\">Accessoires</option>
-                <option value=\"deco\">Décorations</option>
-                <option value=\"vetement\">vetement</option>
+    // line 8
+    public function block_stylesheets($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-                <!-- Ajoutez d'autres options pour les différentes catégories -->
-            </select>
-        </div>
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
-        <div class=\"produits-list\" id=\"produitsList\">
-            ";
-        // line 23
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 23, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
-            // line 24
-            echo "                <div class=\"produit ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "categorie", [], "any", false, false, false, 24), "html", null, true);
-            echo "\">
-                    <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_show", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">
-                        <img src=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 26))), "html", null, true);
-            echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 26), "html", null, true);
-            echo "\">
-                        <div class=\"produit-info\">
-                            <div class=\"produit-nom\">";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 28), "html", null, true);
-            echo "</div>
-                            <div class=\"produit-description\">";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 29), "html", null, true);
-            echo "</div>
-                            <div class=\"produit-prix\">";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 30), "html", null, true);
-            echo "€</div>
-                        </div>
-                    </a>
-                </div>
-            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
-        echo "        </div>
-    </div>
+    }
 
-    <script>
-        function filterProducts() {
-            var selectedCategory = document.getElementById('categorieSelect').value;
-            var produits = document.querySelectorAll('.produit');
-            var produitsList = document.getElementById('produitsList');
-            
-            produits.forEach(function(produit) {
-                if (selectedCategory === 'tous' || produit.classList.contains(selectedCategory)) {
-                    produit.style.display = 'block';
-                } else {
-                    produit.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    // line 12
+    public function block_header($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-";
+        // line 13
+        echo "            ";
+        $this->loadTemplate("includes/navbar.html.twig", "produit/index.html.twig", 13)->display($context);
+        // line 14
+        echo "        ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 18
+    public function block_content($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        // line 19
+        echo "                    ";
+        $this->loadTemplate("produit/produit_list.html.twig", "produit/index.html.twig", 19)->display($context);
+        // line 20
+        echo "        ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 24
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        // line 25
+        echo "            ";
+        $this->loadTemplate("produit/footer.html.twig", "produit/index.html.twig", 25)->display($context);
+        echo "       
+        ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 30
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -156,67 +195,53 @@ class __TwigTemplate_7482410b0875c0e525331d194bb94157 extends Template
     /**
      * @codeCoverageIgnore
      */
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
     public function getDebugInfo()
     {
-        return array (  123 => 35,  112 => 30,  108 => 29,  104 => 28,  97 => 26,  93 => 25,  88 => 24,  84 => 23,  62 => 4,  57 => 3,  44 => 2,  41 => 1,);
+        return array (  176 => 30,  166 => 25,  159 => 24,  152 => 20,  149 => 19,  142 => 18,  135 => 14,  132 => 13,  125 => 12,  113 => 8,  100 => 6,  91 => 31,  89 => 30,  84 => 27,  82 => 24,  77 => 21,  75 => 18,  70 => 15,  68 => 12,  63 => 9,  61 => 8,  57 => 7,  53 => 6,  46 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("
-{% block body %}
-    <link rel=\"stylesheet\" href=\"{{ asset('css/produits.css') }}\">
+        return new Source("<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>{% block title %}Mon Site{% endblock %}</title>
     <link rel=\"stylesheet\" href=\"{{ asset('css/styles.css') }}\">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    <header>
+        {% block header %}
+            {% include 'includes/navbar.html.twig' %}
+        {% endblock %}
+    </header>
 
-    <h1>Liste des Figurines</h1>
+    <main>
+        {% block content %}
+                    {% include 'produit/produit_list.html.twig' %}
+        {% endblock %}
+    </main>
 
-    <div class=\"container\">
-        <div class=\"sidebar\">
-            <h2>Catégories</h2>
-            <select id=\"categorieSelect\" onchange=\"filterProducts()\">
-                <option value=\"tous\">Tous les produits</option>
-                <option value=\"figurines\">Figurines</option>
-                <option value=\"accessoires\">Accessoires</option>
-                <option value=\"deco\">Décorations</option>
-                <option value=\"vetement\">vetement</option>
+    <footer>
+        {% block footer %}
+            {% include 'produit/footer.html.twig' %}       
+        {% endblock %}
+    </footer>
 
-                <!-- Ajoutez d'autres options pour les différentes catégories -->
-            </select>
-        </div>
-
-        <div class=\"produits-list\" id=\"produitsList\">
-            {% for produit in produits %}
-                <div class=\"produit {{ produit.categorie }}\">
-                    <a href=\"{{ path('produit_show', {'id': produit.id}) }}\">
-                        <img src=\"{{ asset('images/' ~ produit.image) }}\" alt=\"{{ produit.nom }}\">
-                        <div class=\"produit-info\">
-                            <div class=\"produit-nom\">{{ produit.nom }}</div>
-                            <div class=\"produit-description\">{{ produit.description }}</div>
-                            <div class=\"produit-prix\">{{ produit.prix }}€</div>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-
-    <script>
-        function filterProducts() {
-            var selectedCategory = document.getElementById('categorieSelect').value;
-            var produits = document.querySelectorAll('.produit');
-            var produitsList = document.getElementById('produitsList');
-            
-            produits.forEach(function(produit) {
-                if (selectedCategory === 'tous' || produit.classList.contains(selectedCategory)) {
-                    produit.style.display = 'block';
-                } else {
-                    produit.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
-{% endblock %}
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    {% block javascripts %}{% endblock %}
+</body>
+</html>
 ", "produit/index.html.twig", "C:\\xampp\\htdocs\\ProjetEcommerce\\templates\\produit\\index.html.twig");
     }
 }

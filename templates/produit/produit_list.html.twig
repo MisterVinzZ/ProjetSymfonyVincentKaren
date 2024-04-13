@@ -1,0 +1,73 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
+{% endblock %}
+
+{% block content %}
+ {% if produitMiseEnAvant %}
+        <div class="featured-product">
+            <h2>Notre Nouveauté Rosé !</h2>
+            <div class="produit-mise-en-avant">
+                <a href="{{ path('produit_show', {'id': produitMiseEnAvant.id}) }}">
+                    <img src="{{ asset('images/' ~ produitMiseEnAvant.image) }}" alt="{{ produitMiseEnAvant.nom }}">
+                    <div class="produit-info">
+                        <div class="produit-nom">{{ produitMiseEnAvant.nom }}</div>
+                        <div class="produit-description">{{ produitMiseEnAvant.description }}</div>
+                        <div class="produit-prix">{{ produitMiseEnAvant.prix }}€</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+    <div class="content_container">
+        <div class="slider">
+            <div class="slides-container">
+                {% for produit in produits %}
+                    <div class="slide">
+                        <a href="{{ path('produit_show', {'id': produit.id}) }}">
+                            <img src="{{ asset('images/' ~ produit.image) }}" alt="{{ produit.nom }}">
+                            <div class="produit-info">
+                                <div class="produit-nom">{{ produit.nom }}</div>
+                                <div class="produit-description">{{ produit.description }}</div>
+                                <div class="produit-prix">{{ produit.prix }}€</div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const slideWidth = $('.slide').outerWidth(true);
+            const slidesPerPage = 3;
+            const totalSlides = $('.slide').length;
+            let currentPosition = 0;
+
+            // Gestion du clic sur le bouton "Next"
+            $('.next').click(function(e) {
+                e.preventDefault();
+                currentPosition -= slideWidth;
+                if (currentPosition < -((totalSlides - slidesPerPage) * slideWidth)) {
+                    currentPosition = 0;
+                }
+                $('.slides-container').css('transform', `translateX(${currentPosition}px)`);
+            });
+
+            // Gestion du clic sur le bouton "Prev"
+            $('.prev').click(function(e) {
+                e.preventDefault();
+                currentPosition += slideWidth;
+                if (currentPosition > 0) {
+                    currentPosition = -((totalSlides - slidesPerPage) * slideWidth);
+                }
+                $('.slides-container').css('transform', `translateX(${currentPosition}px)`);
+            });
+        });
+    </script>
+{% endblock %}

@@ -28,10 +28,15 @@ class ProduitController extends AbstractController
 
     public function index(): Response
     {
-        $produits = $this->entityManager->getRepository(Produit::class)->findAll();
+        // Récupérer un produit au hasard
+        $produitMiseEnAvant = $this->produitRepository->findRandomProduct();
+
+        // Récupérer tous les produits
+        $produits = $this->produitRepository->findAll();
 
         return $this->render('produit/index.html.twig', [
             'produits' => $produits,
+            'produitMiseEnAvant' => $produitMiseEnAvant,
         ]);
     }
 

@@ -1,0 +1,89 @@
+/* Styles pour le footer */
+
+.footer {
+    background-color: #777676;
+    color: #fff;
+    padding: 60px 0;
+    font-family: 'Roboto', sans-serif; /* Utilisation de la police Roboto */
+    margin-top: 200px;
+
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    margin-bottom: 30px;
+    margin-right: 50px;
+}
+
+.links:hover li a:hover{
+    color: #a8a8a8; /* Couleur du texte au survol */
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.contact {
+    margin-bottom: 15px;
+}
+
+.social a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: color 0.3s ease; /* Transition pour le changement de couleur au survol */
+}
+
+.social a:hover {
+    color: #ff6600; /* Changement de couleur au survol */
+}
+
+.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links ul li {
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6600;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition pour le changement de couleur au survol */
+}
+
+.contact-form button:hover {
+    background-color: #e65000; /* Changement de couleur au survol */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}

@@ -26,3 +26,8 @@
         <p>Aucun résultat trouvé pour "{{ productName }}".</p>
     {% endif %}
 {% endblock %}
+<footer>
+        {% block footer %}
+            {% include 'produit/footer.html.twig' %}       
+        {% endblock %}
+    </footer>
