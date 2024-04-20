@@ -4,6 +4,7 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/']], [], [], []],
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/produits']], [], [], []],
     'produits_index' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/produits']], [], [], []],
@@ -13,4 +14,6 @@ return [
     'produit_show' => [['id'], ['_controller' => 'App\\Controller\\ProduitController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produits/show']], [], [], []],
     'produits_par_categorie' => [['categorie'], ['_controller' => 'App\\Controller\\ProduitController::produitsParCategorie'], [], [['variable', '/', '[^/]++', 'categorie', true], ['text', '/produits/categorie']], [], [], []],
     'produits_search' => [[], ['_controller' => 'App\\Controller\\SearchController::search'], [], [['text', '/produits/search']], [], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
 ];
