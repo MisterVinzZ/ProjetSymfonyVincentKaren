@@ -1,28 +1,32 @@
-{# templates/produit/index.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Site{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    <header>
+        {% block header %}
+            {% include 'includes/navbar.html.twig' %}
+        {% endblock %}
+    </header>
 
-    {% include 'includes/navbar.html.twig' %}
+    <main>
+        {% block content %}
+                    {% include 'produit/produit_list.html.twig' %}
+        {% endblock %}
+    </main>
 
+    <footer>
+        {% block footer %}
+            {% include 'produit/footer.html.twig' %}       
+        {% endblock %}
+    </footer>
 
-
-{% block body %}
-    <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
-
-    <h1>Liste des Figurines</h1>
-
-    <div class="container">
-        {% for produit in produits %}
-        <div class="produit">
-            <a href="{{ path('produit_show', {'id': produit.id}) }}">
-                <img src="{{ asset('images/' ~ produit.image) }}" alt="{{ produit.nom }}">
-            
-            <div class="produit-info">
-                <div class="produit-nom">{{ produit.nom }}</div>
-                <div class="produit-description">{{ produit.description }}</div>
-                <div class="produit-prix">{{ produit.prix }}€</div>
-            </div>
-            </a>
-        </div>
-    {% endfor %}
-    </div>
-
-{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% block javascripts %}{% endblock %}
+</body>
+</html>

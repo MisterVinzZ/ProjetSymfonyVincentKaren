@@ -1,20 +1,56 @@
-/* public/css/styles.css */
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
+
+.content_container {
+    position: relative;
+    width: 80%; /* Ajuster la largeur selon vos besoins */
+    margin: 0 auto;
 }
 
-h1 {
-    color: #007bff;
+.slider {
+    overflow: hidden;
+    position: relative;
 }
 
-a {
-    color: #007bff;
-    text-decoration: none;
+.slides-container {
+    display: flex;
+    transition: transform 0.7s ease; /* Animation fluide lors du déplacement */
 }
 
-a:hover {
-    text-decoration: underline;
+.slide {
+    flex: 0 0 auto;
+    width: calc(100% / 3); /* Largeur d'un tiers du conteneur */
+    box-sizing: border-box; /* Inclure la bordure dans la largeur */
+    padding: 0 10px; /* Espacement interne des produits */
+}
+
+.slide img {
+    width: 100%; /* Adapter la largeur de l'image au conteneur */
+    height: 65%;
+    max-height: 100%;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Occupera toute la largeur du slider */
+    padding: 0 20px; /* Espacement des boutons */
+    box-sizing: border-box; /* Inclure le padding dans la largeur */
+}
+.prev,
+.next {
+    color: black;
+    border: none;
+    font-size: 34px;
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
 }

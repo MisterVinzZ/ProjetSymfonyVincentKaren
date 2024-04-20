@@ -2,6 +2,7 @@
 
 {% block body %}
     <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
     <div class="container">
         <div class="produit-detail">
@@ -14,3 +15,8 @@
         </div>
     </div>
 {% endblock %}
+<footer>
+        {% block footer %}
+            {% include 'produit/footer.html.twig' %}       
+        {% endblock %}
+    </footer>

@@ -2,6 +2,7 @@
 
 {% include 'includes/navbar.html.twig' %}
 <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
 {% block body %}
     {% if produits is not empty %}
@@ -25,3 +26,8 @@
         <p>Aucun résultat trouvé pour "{{ productName }}".</p>
     {% endif %}
 {% endblock %}
+<footer>
+        {% block footer %}
+            {% include 'produit/footer.html.twig' %}       
+        {% endblock %}
+    </footer>
