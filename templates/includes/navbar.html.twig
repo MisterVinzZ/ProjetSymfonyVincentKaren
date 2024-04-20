@@ -23,6 +23,7 @@
                 <li class="nav-item">
                     <a href="{{ path('produits_par_categorie', {'categorie': 'accessoire'}) }}">Accessoires</a>
                 </li>
+                
                 <li class="nav-item">
                     {% if search_form is defined %}
                         {{ form_start(search_form, {'attr': {'class': 'form-inline', 'action': path('produits_search'), 'method': 'GET'}}) }}
@@ -49,7 +50,21 @@
                         </form>
                     {% endif %}
                 </li>
+                <!-- Utilisateurs -->
+
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a href="{{ path('app_login') }}">Connexion</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ path('app_register') }}">Inscription</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
+                <!-- KAREN -->
