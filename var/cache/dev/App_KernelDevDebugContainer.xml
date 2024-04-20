@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev</parameter>
+    <parameter key="kernel.build_dir">C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -95,12 +95,12 @@
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev</parameter>
+    <parameter key="router.cache_dir">C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="cache.prefix.seed">_C:\xampp\htdocs\ProjetSymfonyVincentKaren.App_KernelDevDebugContainer</parameter>
@@ -116,7 +116,7 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
@@ -183,7 +183,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -394,7 +394,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/http_cache</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -404,7 +404,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -1019,7 +1019,7 @@
       <tag name="kernel.reset" method="reset"/>
       <argument>B7qy4urOtA</argument>
       <argument>0</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/app</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1035,7 +1035,7 @@
       <argument>oyrPSaPy2p</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1045,7 +1045,7 @@
       <argument>n8y3TpzR84</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1055,7 +1055,7 @@
       <argument>Gww3k+wX-e</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1065,7 +1065,7 @@
       <argument>K1J2TyNqR-</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1075,7 +1075,7 @@
       <argument>Bv6v7-uiP5</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1085,7 +1085,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1104,7 +1104,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/app</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1743,7 +1743,7 @@
       <argument type="service" id=".service_locator.PvoQzFT.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev</argument>
+        <argument key="cache_dir">C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1889,7 +1889,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/sessions</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -2079,10 +2079,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/validation.php</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/validation.php</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -2345,7 +2345,7 @@
       <argument>mVQR4pbftH</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2411,10 +2411,10 @@
       <argument type="collection">
         <argument key="_default">C:\xampp\htdocs\ProjetSymfonyVincentKaren/public/build/entrypoints.json</argument>
       </argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/webpack_encore.cache.php</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/webpack_encore.cache.php</argument>
     </service>
     <service id="webpack_encore.cache" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/webpack_encore.cache.php</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/webpack_encore.cache.php</argument>
       <argument type="service" id="cache.webpack_encore"/>
     </service>
     <service id="cache.webpack_encore" class="Symfony\Component\Cache\Adapter\AdapterInterface">
@@ -2423,7 +2423,7 @@
       <argument>JaAbxlKmJj</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2855,7 +2855,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -3466,7 +3466,7 @@
       <argument>gm9FxwBGa1</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3482,7 +3482,7 @@
       <argument>HFT+g-PRa9</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3995,7 +3995,7 @@
       <argument>Knb4yQf30r</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/pools/system</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4138,7 +4138,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/twig</argument>
+        <argument key="cache">C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -4547,7 +4547,7 @@
       </argument>
     </service>
     <service id="vich_uploader.metadata.cache.file_cache" class="Metadata\Cache\FileCache">
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/vich_uploader</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/vich_uploader</argument>
     </service>
     <service id="vich_uploader.metadata_factory" class="Metadata\MetadataFactory">
       <argument type="service" id="vich_uploader.metadata_driver.chain"/>
@@ -4562,7 +4562,7 @@
     </service>
     <service id="Vich\UploaderBundle\Metadata\CacheWarmer" class="Vich\UploaderBundle\Metadata\CacheWarmer">
       <tag name="kernel.cache_warmer"/>
-      <argument>C:\xampp\htdocs\ProjetSymfonyVincentKaren\var\cache\dev/vich_uploader</argument>
+      <argument>C:/xampp/htdocs/ProjetSymfonyVincentKaren/var/cache/dev/vich_uploader</argument>
       <argument type="service" id="vich_uploader.metadata_reader"/>
     </service>
     <service id="vich_uploader.property_mapping_resolver" class="Vich\UploaderBundle\Mapping\PropertyMappingResolver">
