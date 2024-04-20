@@ -1,6 +1,7 @@
 {# templates/produit/edit.html.twig #}
     <link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
 {% include 'includes/navbar.html.twig' %}
+    <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
 
 {% block body %}
     <div class="form-container">
@@ -45,3 +46,8 @@
         </form>
     </div>
 {% endblock %}
+<footer>
+        {% block footer %}
+            {% include 'produit/footer.html.twig' %}       
+        {% endblock %}
+    </footer>
