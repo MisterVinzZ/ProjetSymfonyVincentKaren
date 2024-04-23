@@ -87,8 +87,6 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
 <body>
     <div class=\"container\">
         ";
-        // line 29
-        $this->loadTemplate("navbar.html.twig", "base.html.twig", 29)->display($context);
         // line 30
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
@@ -181,7 +179,7 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  154 => 35,  147 => 34,  135 => 30,  123 => 11,  110 => 7,  103 => 37,  101 => 34,  96 => 31,  93 => 30,  91 => 29,  80 => 21,  76 => 20,  66 => 12,  64 => 11,  60 => 10,  56 => 9,  51 => 7,  44 => 2,);
+        return array (  152 => 35,  145 => 34,  133 => 30,  121 => 11,  108 => 7,  101 => 37,  99 => 34,  94 => 31,  91 => 30,  80 => 21,  76 => 20,  66 => 12,  64 => 11,  60 => 10,  56 => 9,  51 => 7,  44 => 2,);
     }
 
     public function getSourceContext()
@@ -214,7 +212,7 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
 
 <body>
     <div class=\"container\">
-        {% include 'navbar.html.twig' %}
+        {# {% include 'navbar.html.twig' %} #}
         {% block body %}{% endblock %}
     </div>
 </body>

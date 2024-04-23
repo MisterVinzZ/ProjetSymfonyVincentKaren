@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Panier; // Importer l'entité Panier
 use App\Entity\Produit;
 use App\Form\ProduitType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -108,7 +109,7 @@ class ProduitController extends AbstractController
             'produit' => $produit,
         ]);
     }
-
+    
     /**
      * @Route("/produits/delete/{id}", name="produit_delete", methods={"DELETE"})
      */

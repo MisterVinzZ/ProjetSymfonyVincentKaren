@@ -174,3 +174,28 @@ a:hover {
     font-weight: bold;
     color: #007bff;
 }
+
+/* public/css/produits.css */
+
+/* Style pour le bouton "Ajouter au panier" */
+.ajouter-panier {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff; /* Couleur de fond bleue */
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Style pour le survol du bouton "Ajouter au panier" */
+.ajouter-panier:hover {
+    background-color: #0056b3; /* Couleur de fond plus foncée au survol */
+    border-color: #0056b3; /* Bordure plus foncée au survol */
+}
