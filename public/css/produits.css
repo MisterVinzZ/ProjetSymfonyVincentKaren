@@ -80,7 +80,7 @@ h1{
 .produit-prix {
     font-size: 18px;
     font-weight: bold;
-    color: #007bff;
+    color: rgb(0, 0, 0);
 }
 
 a {
@@ -198,4 +198,13 @@ a:hover {
 .ajouter-panier:hover {
     background-color: #0056b3; /* Couleur de fond plus foncée au survol */
     border-color: #0056b3; /* Bordure plus foncée au survol */
+}
+
+.edit-button{
+    color: red;
+    margin-left: 50px;
+}
+
+.edit-button:hover{
+    color: darkred;
 }

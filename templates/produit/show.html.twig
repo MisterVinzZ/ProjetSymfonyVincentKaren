@@ -12,7 +12,9 @@
                 <div class="produit-description">{{ produit.description }}</div>
                 <div class="produit-prix">{{ produit.prix }}€</div>
                 <button class="ajouter-panier" data-id="{{ produit.id }}">Ajouter au panier</button>
-
+                {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('produit_edit', {'id': produit.id}) }}" class="edit-button">Éditer</a>
+                            {% endif %}
             </div>
         </div>
     </div>
