@@ -8,10 +8,10 @@
     <div class="container">
         <div class="produit-detail">
             <img src="{{ asset('images/' ~ produit.image) }}" alt="{{ produit.nom }}">
-            <div class="produit-info">
-                <div class="produit-nom">{{ produit.nom }}</div>
-                <div class="produit-description">{{ produit.description }}</div>
-                <div class="produit-prix">{{ produit.prix }}€</div>
+            <div class="produit-info" style="margin-left:50px;">
+                <div class="produit-nom"style="font-size: 36px;">{{ produit.nom }}</div>
+                <div class="produit-prix" style="font-size: 28px;">{{ produit.prix }}€</div>
+                <div class="produit-description" style="margin-top: 50px; margin-bottom:50px;">{{ produit.description }}</div>
                 <button class="ajouter-panier" data-id="{{ produit.id }}">Ajouter au panier</button>
                 {% if is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('produit_edit', {'id': produit.id}) }}" class="edit-button">Éditer</a>
