@@ -101,8 +101,8 @@ a:hover {
 }
 
 .produit-detail img {
-    max-width: 100%;
-    height: auto;
+    min-width: 500px;
+    max-width: 500px;
     margin-right: 20px;
 }
 
