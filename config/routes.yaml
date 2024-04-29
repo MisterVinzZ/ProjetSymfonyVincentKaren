@@ -51,3 +51,6 @@ app_login:
     path: /login
     controller: App\Controller\SecurityController::login
 
+app_espace_personnel:
+    path: '/espace-personnel'
+    controller: 'App\Controller\EspacePersonnelController::index'

@@ -147,5 +147,4 @@ class ProduitController extends AbstractController
     }
 
    
-    
 }

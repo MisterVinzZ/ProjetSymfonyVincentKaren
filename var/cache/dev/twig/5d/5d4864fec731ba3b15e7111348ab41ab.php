@@ -111,7 +111,7 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Mon Application";
+        echo "DBZShop !";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -190,7 +190,7 @@ class __TwigTemplate_943ac1d66057bfeb35ef702c4fa64559 extends Template
 <html>
 <head>
     <meta charset=\"UTF-8\">
-    <title>{% block title %}Mon Application{% endblock %}</title>
+    <title>{% block title %}DBZShop !{% endblock %}</title>
     <!-- Inclure les fichiers CSS -->
     <link rel=\"stylesheet\" href=\"{{ asset('css/navbar.css') }}\">
     <link rel=\"stylesheet\" href=\"{{ asset('css/styles.css') }}\">
