@@ -13,9 +13,9 @@
                 <a href="{{ path('produit_show', {'id': produit.id}) }}">
                     <img src="{{ asset('images/' ~ produit.image) }}" alt="{{ produit.nom }}">
                     <div class="produit-info">
-                        <div class="produit-nom">{{ produit.nom }}</div>
+                        <div class="produit-nom" style="margin-bottom: 2px;">{{ produit.nom }}</div>
+                        <div class="produit-prix" style="margin-bottom: 10px;">{{ produit.prix }} €</div>
                         <div class="produit-description">{{ produit.description }}</div>
-                        <div class="produit-prix">{{ produit.prix }} €</div>
                         <button class="ajouter-panier" data-id="{{ produit.id }}">Ajouter au panier</button>
 {% if is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('produit_edit', {'id': produit.id}) }}" class="edit-button">Éditer</a>

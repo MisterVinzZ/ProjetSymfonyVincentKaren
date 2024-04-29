@@ -1,13 +1,12 @@
-{# templates/produit/edit.html.twig #}
+{% block body %}
     <link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
-{% include 'includes/navbar.html.twig' %}
+    {% include 'includes/navbar.html.twig' %}
     <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
 
-{% block body %}
     <div class="form-container">
         <h1>Modifier Produit</h1>
 
-        {{ form_start(form) }}
+        {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
 
         {# Ajouter le champ de catégorie #}
         <div class="form-group">
@@ -46,8 +45,3 @@
         </form>
     </div>
 {% endblock %}
-<footer>
-        {% block footer %}
-            {% include 'produit/footer.html.twig' %}       
-        {% endblock %}
-    </footer>

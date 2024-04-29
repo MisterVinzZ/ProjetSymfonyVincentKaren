@@ -16,4 +16,6 @@ return [
     'produits_search' => [[], ['_controller' => 'App\\Controller\\SearchController::search'], [], [['text', '/produits/search']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
+    'panier_ajouter' => [['produitId'], ['_controller' => 'App\\Controller\\PanierController::ajouterProduitAuPanier'], [], [['variable', '/', '[^/]++', 'produitId', true], ['text', '/panier/ajouter']], [], [], []],
+    'app_espace_personnel' => [[], ['_controller' => 'App\\Controller\\EspacePersonnelController::index'], [], [['text', '/espace-personnel']], [], [], []],
 ];

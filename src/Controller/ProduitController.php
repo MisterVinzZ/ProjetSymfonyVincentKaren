@@ -15,6 +15,7 @@ use App\Form\SearchProductFormType;
 use App\Repository\ProduitRepository;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ProduitController extends AbstractController
 {
@@ -93,23 +94,42 @@ class ProduitController extends AbstractController
     /**
      * @Route("/produits/edit/{id}", name="produit_edit", methods={"GET", "POST"})
      */
-    public function edit(Request $request, Produit $produit): Response
-    {
-        $form = $this->createForm(ProduitType::class, $produit);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->entityManager->flush();
-            $this->addFlash('success', 'Produit modifié avec succès.');
-            return $this->redirectToRoute('produits_index');
+public function edit(Request $request, Produit $produit): Response
+{
+    $form = $this->createForm(ProduitType::class, $produit);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        // Récupérer le fichier téléchargé
+        $imageFile = $form->get('image')->getData();
+
+        // Vérifier si un nouveau fichier a été téléchargé
+        if ($imageFile instanceof UploadedFile) {
+            // Déplacer le fichier vers le répertoire de stockage
+            $newFilename = md5(uniqid()).'.'.$imageFile->guessExtension();
+            $imageFile->move(
+                $this->getParameter('images_directory'),
+                $newFilename
+            );
+
+            // Mettre à jour le nom du fichier dans l'entité Produit
+            $produit->setImage($newFilename);
         }
 
-        return $this->render('produit/edit.html.twig', [
-            'form' => $form->createView(),
-            'produit' => $produit,
-        ]);
+        // Enregistrer les modifications dans la base de données
+        $this->entityManager->flush();
+
+        $this->addFlash('success', 'Produit modifié avec succès.');
+        return $this->redirectToRoute('produits_index');
     }
-    
+
+    return $this->render('produit/edit.html.twig', [
+        'form' => $form->createView(),
+        'produit' => $produit,
+    ]);
+}
+
     /**
      * @Route("/produits/delete/{id}", name="produit_delete", methods={"DELETE"})
      */
