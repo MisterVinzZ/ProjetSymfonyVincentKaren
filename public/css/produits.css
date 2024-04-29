@@ -96,13 +96,12 @@ a:hover {
 .produit-detail {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-top: 50px;
 }
 
 .produit-detail img {
-    max-width: 100%;
-    height: auto;
+    min-width: 500px;
+    max-width: 500px;
     margin-right: 20px;
 }
 
@@ -154,12 +153,12 @@ a:hover {
 .produit-info {
     text-align: center;
     padding: 10px;
+    max-width: 500px;
 }
 
 .produit-nom {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
 .produit-description {
@@ -167,12 +166,13 @@ a:hover {
     line-height: 1.4;
     color: #666;
     margin-bottom: 10px;
+    text-align: justify;
 }
 
 .produit-prix {
     font-size: 20px;
     font-weight: bold;
-    color: #007bff;
+    color: #ff9900;
 }
 
 /* public/css/produits.css */
@@ -187,17 +187,18 @@ a:hover {
     text-align: center;
     text-decoration: none;
     color: #ffffff;
-    background-color: #007bff; /* Couleur de fond bleue */
+    background-color: #ff9900; /* Couleur de fond bleue */
     border: 2px solid transparent;
     border-radius: 5px;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
+    padding: 10px;
 }
 
 /* Style pour le survol du bouton "Ajouter au panier" */
 .ajouter-panier:hover {
-    background-color: #0056b3; /* Couleur de fond plus foncée au survol */
-    border-color: #0056b3; /* Bordure plus foncée au survol */
+    background-color: #d34503; /* Couleur de fond plus foncée au survol */
+    border-color: #d34503; /* Bordure plus foncée au survol */
 }
 
 .edit-button{

@@ -55,3 +55,7 @@ panier_ajouter:
     path: '/panier/ajouter/{produitId}'
     controller: 'App\Controller\PanierController::ajouterProduitAuPanier'
     methods: ['POST']
+    
+app_espace_personnel:
+    path: '/espace-personnel'
+    controller: 'App\Controller\EspacePersonnelController::index'

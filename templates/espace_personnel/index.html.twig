@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Espace personnel{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/produits.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/espperso.css') }}">
+
+    {% include 'includes/navbar.html.twig' %}
+</head>
+<body>
+
+{% block content %}
+    <div class="esp-container">
+        <h1 class="esp-title">Espace personnel</h1>
+        
+        {% if app.user %}
+            <p class="esp-text">Bienvenue, {{ app.user.getUserIdentifier() }} !</p>
+            <p class="esp-text">Statut : 
+                {% if is_granted('ROLE_ADMIN') %}
+                    Administrateur
+                {% else %}
+                    Utilisateur standard
+                {% endif %}
+            </p>
+            <!-- Ajoutez d'autres informations de l'utilisateur selon vos besoins -->
+            <p class="esp-text">Informations supplémentaires : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget consectetur urna. Quisque eleifend elit non sem varius, in tempor nisi faucibus.</p>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('produit_new') }}" class="esp-btn">Créer un nouveau produit</a>
+            {% endif %}
+        {% else %}
+            <p class="esp-text">Connectez-vous pour accéder à votre espace personnel.</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% include 'produit/footer.html.twig' %}
+
+</body>
+</html>

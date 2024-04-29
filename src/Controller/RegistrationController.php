@@ -40,6 +40,7 @@ class RegistrationController extends AbstractController
                 $authenticator,
                 $request
             );
+            return $this->redirectToRoute('espace_personnel/index.html.twig');
         }
 
         return $this->render('registration/register.html.twig', [

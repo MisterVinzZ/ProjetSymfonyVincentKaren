@@ -1,8 +1,8 @@
 /* Styles pour le footer */
 
 .footer {
-    background-color: #777676;
-    color: #fff;
+    background-color: #1a0b3e;
+    color: #ffffff;
     padding: 60px 0;
     font-family: 'Roboto', sans-serif; /* Utilisation de la police Roboto */
     margin-top: 200px;
@@ -10,7 +10,6 @@
 }
 
 .container {
-    width: 80%;
     margin: 0 auto;
 }
 
@@ -27,7 +26,7 @@
 }
 
 .links:hover li a:hover{
-    color: #a8a8a8; /* Couleur du texte au survol */
+    color: #a7a5a4; /* Couleur du texte au survol */
 }
 
 .footer-section h3 {
@@ -40,14 +39,14 @@
 }
 
 .social a {
-    color: #fff;
+    color: #ffffff;
     font-size: 24px;
     margin-right: 15px;
     transition: color 0.3s ease; /* Transition pour le changement de couleur au survol */
 }
 
 .social a:hover {
-    color: #ff6600; /* Changement de couleur au survol */
+    color: #a7a5a4; /* Changement de couleur au survol */
 }
 
 .links ul {
@@ -87,3 +86,4 @@
     padding-top: 20px;
     border-top: 1px solid #555;
 }
+

@@ -18,6 +18,7 @@ return [
         '/produits/search' => [[['_route' => 'produits_search', '_controller' => 'App\\Controller\\SearchController::search'], null, ['GET' => 0], null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/espace-personnel' => [[['_route' => 'app_espace_personnel', '_controller' => 'App\\Controller\\EspacePersonnelController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
