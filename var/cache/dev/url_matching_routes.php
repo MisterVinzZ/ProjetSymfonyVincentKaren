@@ -22,21 +22,25 @@ return [
     [ // $regexpList
         0 => '{^(?'
                 .'|/_error/(\\d+)(?:\\.([^/]++))?(*:35)'
-                .'|/produits/(?'
-                    .'|edit/([^/]++)(*:68)'
-                    .'|delete/([^/]++)(*:90)'
-                    .'|show/([^/]++)(*:110)'
-                    .'|categorie/([^/]++)(*:136)'
+                .'|/p(?'
+                    .'|roduits/(?'
+                        .'|edit/([^/]++)(*:71)'
+                        .'|delete/([^/]++)(*:93)'
+                        .'|show/([^/]++)(*:113)'
+                        .'|categorie/([^/]++)(*:139)'
+                    .')'
+                    .'|anier/ajouter/([^/]++)(*:170)'
                 .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
         35 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        68 => [[['_route' => 'produit_edit', '_controller' => 'App\\Controller\\ProduitController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        90 => [[['_route' => 'produit_delete', '_controller' => 'App\\Controller\\ProduitController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        110 => [[['_route' => 'produit_show', '_controller' => 'App\\Controller\\ProduitController::show'], ['id'], null, null, false, true, null]],
-        136 => [
-            [['_route' => 'produits_par_categorie', '_controller' => 'App\\Controller\\ProduitController::produitsParCategorie'], ['categorie'], null, null, false, true, null],
+        71 => [[['_route' => 'produit_edit', '_controller' => 'App\\Controller\\ProduitController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        93 => [[['_route' => 'produit_delete', '_controller' => 'App\\Controller\\ProduitController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        113 => [[['_route' => 'produit_show', '_controller' => 'App\\Controller\\ProduitController::show'], ['id'], null, null, false, true, null]],
+        139 => [[['_route' => 'produits_par_categorie', '_controller' => 'App\\Controller\\ProduitController::produitsParCategorie'], ['categorie'], null, null, false, true, null]],
+        170 => [
+            [['_route' => 'panier_ajouter', '_controller' => 'App\\Controller\\PanierController::ajouterProduitAuPanier'], ['produitId'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

@@ -11,7 +11,9 @@
                 <div class="produit-nom">{{ produit.nom }}</div>
                 <div class="produit-description">{{ produit.description }}</div>
                 <div class="produit-prix">{{ produit.prix }}€</div>
-                <button class="ajouter-panier" data-id="{{ produit.id }}">Ajouter au panier</button>
+                <form action="{{ path('panier_ajouter', {'produitId': produit.id}) }}" method="post">
+                    <button class="ajouter-panier" type="submit">Ajouter au panier</button>
+                </form>
                 {% if is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('produit_edit', {'id': produit.id}) }}" class="edit-button">Éditer</a>
                             {% endif %}

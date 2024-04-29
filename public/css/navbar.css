@@ -79,3 +79,7 @@
 .btn-outline-secondary:active {
     background-color: #a8a8a8;
 }
+
+p{
+    color: red;
+}
