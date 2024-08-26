@@ -30,10 +30,8 @@ class ProduitController extends AbstractController
 
     public function index(): Response
     {
-        // Récupérer un produit au hasard
         $produitMiseEnAvant = $this->produitRepository->findRandomProduct();
 
-        // Récupérer tous les produits
         $produits = $this->produitRepository->findAll();
 
         return $this->render('produit/index.html.twig', [
@@ -52,9 +50,7 @@ class ProduitController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/produits/new", name="produit_new", methods={"GET","POST"})
-     */
+   
     public function new(Request $request): Response
     {
         $produit = new Produit();
@@ -91,9 +87,6 @@ class ProduitController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/produits/edit/{id}", name="produit_edit", methods={"GET", "POST"})
-     */
 
 public function edit(Request $request, Produit $produit): Response
 {

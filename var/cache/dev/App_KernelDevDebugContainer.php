@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerBNT46WJ\App_KernelDevDebugContainer([
     'container.build_hash' => 'BNT46WJ',
-    'container.build_id' => 'b51391b6',
-    'container.build_time' => 1714385143,
+    'container.build_id' => 'b9505507',
+    'container.build_time' => 1724678483,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerBNT46WJ');
